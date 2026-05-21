@@ -10,7 +10,7 @@ const DATA_FILE_PATH = path.join(__dirname, '../data/sections.json');
 sectionsService.init(DATA_FILE_PATH);
 
 app.use(express.json());
-
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.use((req, res, next) => {
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
