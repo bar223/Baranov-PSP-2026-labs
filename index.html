@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спортивные секции МГТУ</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/examples/jsm/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+</script>
+</head>
+<body>
+    <input type="radio" name="hero-slide" id="hero1" checked hidden>
+    <input type="radio" name="hero-slide" id="hero2" hidden>
+    <input type="radio" name="hero-slide" id="hero3" hidden>
+    <input type="checkbox" id="theme-switch" hidden>
+    <input type="checkbox" id="mobile-menu-toggle" hidden>
+
+    <div class="app">
+        <label for="mobile-menu-toggle" class="menu-overlay"></label>
+
+        <div id="header-container"></div>
+
+        <div id="slider-container"></div>
+
+        <main id="root" style="padding: 0; background: transparent; box-shadow: none; max-width: 100%;"></main>
+
+        <footer class="footer">
+            <p>ЛР 3 выполнена Барановым Е.Ю., группа ИУ5-45Б</p>
+            <a href="https://github.com/bar223" target="_blank" class="github-link">GitHub</a>
+        </footer>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
