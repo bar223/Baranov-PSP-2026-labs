@@ -1,5 +1,4 @@
 import { SectionCardComponent } from "../../components/section-card/index.js";
-import { SectionPage } from "../section/index.js";
 import { api } from "../../services/api.js";
 
 export class MainPage {
@@ -62,7 +61,7 @@ export class MainPage {
         // --- 1. ДЕЛЕГИРОВАНИЕ СОБЫТИЙ ---
         track.onclick = async (e) => {
             if (e.target.classList.contains('action-info')) {
-                new SectionPage(this.parent, +e.target.dataset.id, this.navigate).render();
+                this.navigate('section', { id: +e.target.dataset.id });
             } else if (e.target.classList.contains('action-edit')) {
                 this.navigate('form', { id: +e.target.dataset.id });
             } else if (e.target.classList.contains('action-delete')) {
