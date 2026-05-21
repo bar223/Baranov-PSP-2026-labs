@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Плавание",
+    "text": "Занятия в бассейне МГТУ. Тренировки трижды в неделю.",
+    "spots": 12,
+    "src": "assets/7613.jpg",
+    "modelPath": "models/swimming.glb"
+  },
+  {
+    "id": 2,
+    "title": "Волейбол",
+    "text": "Сборная университета. Участие в городских турнирах.",
+    "spots": 0,
+    "src": "assets/86490.jpg",
+    "modelPath": "models/volleyball.glb"
+  },
+  {
+    "id": 3,
+    "title": "Тренажёрный зал",
+    "text": "Современное оборудование. Свободное посещение.",
+    "spots": 5,
+    "src": "assets/2149552285.jpg",
+    "modelPath": "models/dumbbell.glb"
+  },
+  {
+    "id": 4,
+    "title": "Баскетбол",
+    "text": "Открыт новый набор! Тренировки по вечерам.",
+    "spots": 8,
+    "src": "assets/7613.jpg",
+    "modelPath": "models/sport.glb"
+  },
+  {
+    "id": 5,
+    "title": "Лёгкая атлетика",
+    "text": "Занятия на стадионе. Ждём всех желающих.",
+    "spots": 3,
+    "src": "assets/86490.jpg",
+    "modelPath": "models/sport.glb"
+  }
+]
