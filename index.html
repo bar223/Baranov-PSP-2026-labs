@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спортивные секции МГТУ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<input type="radio" name="tab" id="tab-home" checked hidden>
+<input type="radio" name="tab" id="tab-sections" hidden>
+<input type="radio" name="tab" id="tab-schedule" hidden>
+<input type="radio" name="tab" id="tab-calc" hidden>
+<input type="radio" name="tab" id="tab-signup" hidden>
+<input type="checkbox" id="theme-switch" hidden>
+<input type="radio" name="hero-slide" id="hero1" checked hidden>
+<input type="radio" name="hero-slide" id="hero2" hidden>
+<input type="radio" name="hero-slide" id="hero3" hidden>
+<input type="checkbox" id="mobile-menu-toggle" hidden>
+
+<div class="app">
+    <label for="mobile-menu-toggle" class="menu-overlay"></label>
+
+    <header class="mobile-header">
+        <label for="mobile-menu-toggle" class="burger">☰</label>
+        <div class="mobile-logo">
+            <img src="assets/bmstu_logo.png" alt="Логотип МГТУ" class="mobile-logo-img">
+        </div>
+        <div class="mobile-theme">
+            <label for="theme-switch">🌓</label>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><label for="tab-home">Главная</label></li>
+            <li><label for="tab-sections">Секции</label></li>
+            <li><label for="tab-schedule">Расписание</label></li>
+            <li><label for="tab-calc">Калькулятор</label></li>
+            <li><label for="tab-signup">Запись</label></li>
+        </ul>
+    </div>
+
+    <div class="hero-slider">
+        <div class="hero-menu">
+            <label for="tab-home" class="logo-link">
+                <img src="assets/bmstu_logo.png" alt="Логотип МГТУ" class="logo">
+            </label>
+            <div class="nav-buttons">
+                <label for="tab-sections">Секции</label>
+                <label for="tab-schedule">Расписание</label>
+                <label for="tab-calc">Калькулятор</label>
+                <label for="tab-signup">Запись</label>
+            </div>
+            <div class="theme-switch-hero">
+                <label for="theme-switch">🌓</label>
+            </div>
+        </div>
+        <div class="slides-container">
+            <div class="slide" data-slide="1">
+                <img src="assets/7613.jpg" alt="Спорт">
+                <div class="slide-content">
+                    <h2>Открыт набор в секцию плавания</h2>
+                    <p>С 1 сентября стартует набор в группы начальной подготовки.</p>
+                    <a href="#" class="read-more">Подробнее →</a>
+                </div>
+            </div>
+            <div class="slide" data-slide="2">
+                <img src="assets/86490.jpg" alt="Спорт">
+                <div class="slide-content">
+                    <h2>Соревнования по волейболу</h2>
+                    <p>15 апреля состоится турнир между факультетами.</p>
+                    <a href="#" class="read-more">Подробнее →</a>
+                </div>
+            </div>
+            <div class="slide" data-slide="3">
+                <img src="assets/2149552285.jpg" alt="Спорт">
+                <div class="slide-content">
+                    <h2>Новый тренажёрный зал</h2>
+                    <p>В главном корпусе открылся современный тренажёрный зал.</p>
+                    <a href="#" class="read-more">Подробнее →</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <label for="hero1"></label>
+            <label for="hero2"></label>
+            <label for="hero3"></label>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="tab-content">
+            <div class="news-section">
+                <h3>Новости и события</h3>
+                <div class="news-list">
+                    <article class="news-card">
+                        <img src="assets/7613.jpg" alt="Новость">
+                        <div class="news-content">
+                            <h4>Открыт набор в секцию плавания</h4>
+                            <p>С 1 сентября стартует набор в группы начальной подготовки. Успейте записаться!</p>
+                            <span class="news-date">25 марта 2026</span>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="assets/86490.jpg" alt="Новость">
+                        <div class="news-content">
+                            <h4>Соревнования по волейболу</h4>
+                            <p>15 апреля состоится турнир между факультетами. Приглашаем болельщиков!</p>
+                            <span class="news-date">20 марта 2026</span>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="assets/2149552285.jpg" alt="Новость">
+                        <div class="news-content">
+                            <h4>Новый тренажёрный зал</h4>
+                            <p>В главном корпусе открылся современный тренажёрный зал с новым оборудованием.</p>
+                            <span class="news-date">15 марта 2026</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="text-news-section">
+                <h3>Актуальные объявления</h3>
+                <div class="text-news-list">
+                    <div class="text-news-item">
+                        <span class="text-news-date">28 марта 2026</span>
+                        <h4>Изменение расписания тренировок в праздничные дни</h4>
+                        <p>В период с 1 по 10 мая занятия проводятся по особому графику. Подробности у тренеров.</p>
+                    </div>
+                    <div class="text-news-item">
+                        <span class="text-news-date">22 марта 2026</span>
+                        <h4>Набор волонтёров на университетскую спартакиаду</h4>
+                        <p>Приглашаем студентов помочь в организации соревнований. Будет выдан сертификат.</p>
+                    </div>
+                    <div class="text-news-item">
+                        <span class="text-news-date">18 марта 2026</span>
+                        <h4>Скидка на абонементы для студентов МГТУ</h4>
+                        <p>Предъявите студенческий билет и получите скидку 20% на любой абонемент до конца апреля.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lab-goal">
+                <p><strong>Цель ЛР:</strong> знакомство с <span class="highlight">HTML</span> и <span class="highlight">CSS</span>.</p>
+            </div>
+        </section>
+
+        <section id="sections" class="tab-content">
+            <h2>Наши секции</h2>
+            <ul><li>🏊 Плавание</li><li>🏐 Волейбол</li><li>🏀 Баскетбол</li><li>⚽ Футбол</li><li>🏋️ Тренажёрный зал</li></ul>
+        </section>
+
+        <section id="schedule" class="tab-content">
+            <h2>Расписание тренировок</h2>
+            <table border="1">
+                <tr><th>День</th><th>Время</th><th>Секция</th></tr>
+                <tr><td>Пн/Ср</td><td>18:00-19:30</td><td>Волейбол</td></tr>
+                <tr><td>Вт/Чт</td><td>19:00-20:30</td><td>Плавание</td></tr>
+                <tr><td>Пт</td><td>17:00-18:30</td><td>Тренажёрный зал</td></tr>
+            </table>
+        </section>
+
+
+        <section id="calculator" class="tab-content">
+            <h2>Калькулятор</h2>
+            <div class="calculator">
+                <div class="result">0</div>
+                <div class="row"><button class="my-btn secondary">C</button><button class="my-btn secondary">+/-</button><button class="my-btn secondary">%</button><button class="my-btn primary">/</button></div>
+                <div class="row"><button class="my-btn">7</button><button class="my-btn">8</button><button class="my-btn">9</button><button class="my-btn primary">×</button></div>
+                <div class="row"><button class="my-btn">4</button><button class="my-btn">5</button><button class="my-btn">6</button><button class="my-btn primary">−</button></div>
+                <div class="row"><button class="my-btn">1</button><button class="my-btn">2</button><button class="my-btn">3</button><button class="my-btn primary">+</button></div>
+                <div class="row"><button class="my-btn">0</button><button class="my-btn">.</button><button class="my-btn primary execute">=</button></div>
+            </div>
+        </section>
+
+        <section id="signup" class="tab-content">
+            <h2>Запись на секцию</h2>
+            <form class="signup-form">
+                <label for="name">ФИО:</label>
+                <input type="text" id="name" required>
+                <label for="group">Группа:</label>
+                <input type="text" id="group" required>
+                <label for="section">Секция:</label>
+                <select id="section"><option>Волейбол</option><option>Баскетбол</option><option>Футбол</option><option>Плавание</option></select>
+                <label for="comment">Комментарий:</label>
+                <textarea id="comment" rows="3"></textarea>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>ЛР выполнена Барановым Е.Ю., группа ИУ5-45Б</p>
+        <p>Сайт для записи на спортивные секции МГТУ</p>
+        <a href="https://github.com/bar223" target="_blank" class="github-link">GitHub</a>
+    </footer>
+</div>
+</body>
+</html>
