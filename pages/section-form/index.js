@@ -39,11 +39,57 @@ export class SectionFormPage {
                             <input type="text" id="f-modelpath" class="form-control" placeholder="models/sport.glb">
                         </div>
 
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-danger fw-bold" id="btn-save">
+                                ${isEdit ? 'Сохранить изменения' : 'Добавить секцию'}
+                            </button>
+                            <div id="form-error" class="text-danger align-self-center" style="display:none;"></div>
+                        </div>
                     </form>
                 </div>
             </div>`;
 
         document.getElementById('btn-back').onclick = () => this.navigate('main');
+
+        document.getElementById('section-form').onsubmit = async (e) => {
+            e.preventDefault();
+            const errorEl = document.getElementById('form-error');
+            const btn = document.getElementById('btn-save');
+
+            const payload = {
+                title:     document.getElementById('f-title').value.trim(),
+                text:      document.getElementById('f-text').value.trim(),
+                spots:     parseInt(document.getElementById('f-spots').value, 10),
+                src:       document.getElementById('f-src').value.trim(),
+                modelPath: document.getElementById('f-modelpath').value.trim(),
+            };
+
+            if (!payload.title) {
+                errorEl.textContent = 'Название обязательно';
+                errorEl.style.display = 'block';
+                return;
+            }
+            if (isNaN(payload.spots) || payload.spots < 0) {
+                errorEl.textContent = 'Места — целое неотрицательное число';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            btn.disabled = true;
+            errorEl.style.display = 'none';
+            try {
+                if (isEdit) {
+                    await api.updateSection(this.id, payload);
+                } else {
+                    await api.createSection(payload);
+                }
+                this.navigate('main');
+            } catch (err) {
+                errorEl.textContent = 'Ошибка сохранения: ' + err.message;
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+            }
+        };
 
         if (isEdit) {
             try {

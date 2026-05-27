@@ -18,6 +18,8 @@ export const api = {
         ).toString();
         return request('GET', params ? `${BASE_URL}?${params}` : BASE_URL);
     },
-    getSectionById(id) { return request('GET', `${BASE_URL}/${id}`); },
-    deleteSection(id) { return request('DELETE', `${BASE_URL}/${id}`); },
+    getSectionById(id)      { return request('GET',    `${BASE_URL}/${id}`); },
+    createSection(data)     { return request('POST',   BASE_URL, data); },
+    updateSection(id, data) { return request('PUT',    `${BASE_URL}/${id}`, data); },
+    deleteSection(id)       { return request('DELETE', `${BASE_URL}/${id}`); },
 };
