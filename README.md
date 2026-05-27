@@ -172,58 +172,63 @@ npx serve .
 
 ## Домашнее задание
 
-Две задачи по варианту, внедрённые в SPA как страница **«Статистика»** (кнопка в шапке).
+Три алгоритмические задачи по варианту. Реализованы как автономные Node.js-скрипты (`node N_x_x.js`), читают ввод из консоли.
 
-### Требования к коду
+### Задание 1 (N_1_4) — Сумма и произведение массива
 
-| Требование | Реализация |
-|---|---|
-| Цикл с постусловием (не по счётчику) | `do { ... } while (index < spotsArray.length)` |
-| Строка | `attendanceRecord` — строка из `'1'` и `'0'` |
-| Объект | Объект секции `{ id, title, spots, src, modelPath }` |
-| Коллекция (массив) | `store.data` — массив секций; `spotsArray` — производный |
-
-### Задание 1 (N_1_4) — Статистика свободных мест
-
-Оригинальная задача: сумма и произведение элементов числового массива.
-Адаптация: суммарное количество свободных мест и произведение ненулевых значений по всем секциям.
+Ввести массив чисел, найти их сумму и произведение.
 
 ```js
-function getSectionSpotsStats(sections) {
-    const spotsArray = sections.map(section => section.spots);
-    let totalSpots = 0, spotsProduct = 1, index = 0;
-
-    do {
-        totalSpots += spotsArray[index];
-        if (spotsArray[index] > 0) spotsProduct *= spotsArray[index];
-        index++;
-    } while (index < spotsArray.length);
-
-    return { totalSpots, spotsProduct, sectionsCount: sections.length };
+function getSumAndMultOfArray(arr) {
+    let sum = 0, mult = 1;
+    for (let num of arr) {
+        sum += num;
+        mult *= num;
+    }
+    return { sum, mult };
 }
 ```
 
-### Задание 2 (N_2_3) — Наибольшая серия посещений
+Запуск: `node N_1_4.js`
 
-Оригинальная задача: длина наибольшей последовательности единиц в бинарной строке.
-Адаптация: пользователь вводит журнал тренировок (`1` — пришёл, `0` — пропустил), функция находит самую длинную серию подряд идущих занятий.
+### Задание 2 (N_2_3) — Наибольшая серия единиц
+
+Найти длину наибольшей последовательности `1` в бинарной строке.
 
 ```js
-function getLongestTrainingStreak(attendanceRecord) {
-    let longestStreak = 0, currentStreak = 0;
-
-    for (let i = 0; i < attendanceRecord.length; i++) {
-        if (attendanceRecord[i] === '1') {
-            currentStreak++;
-            if (currentStreak > longestStreak) longestStreak = currentStreak;
+function getMaxOnesSequence(str) {
+    let maxLen = 0, currentLen = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === '1') {
+            currentLen++;
+            if (currentLen > maxLen) maxLen = currentLen;
         } else {
-            currentStreak = 0;
+            currentLen = 0;
         }
     }
-
-    return longestStreak;
+    return maxLen;
 }
 ```
+
+Запуск: `node N_2_3.js`
+
+### Задание 3 (N_3_5) — Группировка анаграмм
+
+Из списка слов выделить группы анаграмм (слов с одинаковым набором букв).
+
+```js
+function anagram(words) {
+    const groups = {};
+    for (const word of words) {
+        const key = word.toLowerCase().split('').sort().join('');
+        if (!groups[key]) groups[key] = [];
+        groups[key].push(word);
+    }
+    return Object.values(groups).filter(g => g.length >= 2).map(g => g.sort());
+}
+```
+
+Запуск: `node N_3_5.js`
 
 ### Часть 2 — 3D-модель на странице секции
 
